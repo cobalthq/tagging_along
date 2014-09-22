@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = TaggingAlong::VERSION
   spec.authors       = ["Dennis Charles Hackethal"]
   spec.email         = ["dennis.hackethal@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Lightweight tagging gem}
+  spec.description   = %q{Super lightweight alternative to all the other tagging gems out there.}
   spec.homepage      = ""
   spec.license       = "MIT"
 

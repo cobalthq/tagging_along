@@ -87,6 +87,14 @@ end
 
 That's it!
 
+## Testing
+
+If you use RSpec, you can check if your model is taggable like this:
+
+```ruby
+User.should be_taggable_on :cars
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/CrowdCurity/tagging_along/fork )
