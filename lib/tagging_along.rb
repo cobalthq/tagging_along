@@ -21,22 +21,19 @@ module TaggingAlong
         end
       end
     end
-  end
 
-  module InstanceMethods
     def taggable_on?(attribute)
       begin
-        send(:"#{attribute}_tags")
-        send(:"#{attribute}_list")
+        new.send(:"#{attribute}_tags")
+        new.send(:"#{attribute}_list")
         true
       rescue Exception => e
         false
       end
     end
   end
-  
+
   def self.included(receiver)
     receiver.extend ClassMethods
-    receiver.send(:include, InstanceMethods)
   end
 end

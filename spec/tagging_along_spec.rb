@@ -11,7 +11,7 @@ describe TaggingAlong do
       instance.taggable_attribute = 'one,two'
       klass.is_taggable_on(:taggable_attribute)
 
-      expect(instance).to be_taggable_on :taggable_attribute
+      expect(klass).to be_taggable_on :taggable_attribute
       expect(instance.taggable_attribute_tags).to eq ['one', 'two']
       expect(instance.taggable_attribute_list).to eq 'one, two'
     end
@@ -20,7 +20,7 @@ describe TaggingAlong do
       instance.taggable_attribute = 'one:two'
       klass.is_taggable_on(:taggable_attribute, separator: ':')
 
-      expect(instance).to be_taggable_on :taggable_attribute
+      expect(klass).to be_taggable_on :taggable_attribute
       expect(instance.taggable_attribute_tags).to eq ['one', 'two']
       expect(instance.taggable_attribute_list).to eq 'one: two'
     end
@@ -28,7 +28,7 @@ describe TaggingAlong do
 
   context 'not taggable' do
     it 'is not taggable on untaggable_attribute' do
-      expect(instance).not_to be_taggable_on :untaggable_attribute
+      expect(klass).not_to be_taggable_on :untaggable_attribute
     end
   end
 end
