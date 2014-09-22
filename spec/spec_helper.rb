@@ -1,0 +1,1 @@
+require "tagging_along"
