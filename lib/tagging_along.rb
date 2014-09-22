@@ -1,5 +1,4 @@
 require "tagging_along/version"
-require "pry-debugger"
 require "tagging_along/array"
 
 module TaggingAlong
