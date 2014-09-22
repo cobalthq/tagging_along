@@ -21,62 +21,67 @@ Or install it yourself as:
 Include the gem in the model you want to use it with:
 
 ```ruby
-include TaggingAlong
+class User
+  include TaggingAlong
+end
 ```
 
 and define the attributes that are taggable inside the class:
 
 ```ruby
-class Foo
-  attr_accessor :bar
+class User
+  include TaggingAlong
+  attr_accessor :cars
 
-  is_taggable_on :bar
+  is_taggable_on :cars
 end
 ```
 
 Instances of your class will now have taggable attributes. For example:
 
 ```ruby
-foo = Foo.new
-foo.bar = 'one,two'
+user = User.new
+user.cars = 'Audi,BMW'
 
-foo.bar_tags
-# => ['one', 'two']
+user.cars_tags
+# => ['Audi', 'BMW']
 
-foo.bar_list
-# => 'one, two'
+user.cars_list
+# => 'Audi, BMW'
 ```
 
 You can also specify a custom separator:
 
 ```ruby
-class Foo
-  attr_accessor :bar
+class User
+  include TaggingAlong
+  attr_accessor :cars
 
-  is_taggable_on :bar, separator: ':'
+  is_taggable_on :cars, separator: ':'
 end
 ```
 
 which will play out like this:
 
 ```ruby
-foo = Foo.new
-foo.bar = 'one:two'
+user = User.new
+user.cars = 'Audi:BMW'
 
-foo.bar_tags
-# => ['one', 'two']
+user.cars_tags
+# => ['Audi', 'BMW']
 
-foo.bar_list
-# => 'one: two'
+user.cars_list
+# => 'Audi: BMW'
 ```
 
 You can define multiple taggable attributes in one go:
 
 ```ruby
-class Foo
-  attr_accessor :bar1, :bar2
+class User
+  include TaggingAlong
+  attr_accessor :cars, :qualifications
 
-  is_taggable_on :bar, :bar2
+  is_taggable_on :cars, :qualifications
 end
 ```
 
