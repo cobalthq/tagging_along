@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["dennis.hackethal@gmail.com"]
   spec.summary       = %q{Lightweight tagging gem}
   spec.description   = %q{Super lightweight alternative to all the other tagging gems out there.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/CrowdCurity/tagging_along"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
